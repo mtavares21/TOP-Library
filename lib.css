@@ -1,0 +1,408 @@
+body{
+ font-family: 'Noto Sans JP', sans-serif;
+ display: grid;
+ justify-self: center;
+ justify-items: center;
+ background-image: rl("libBackground.png");
+ background-repeat: repeat;
+ background-size: contain;
+ background-color: rgb(249, 200, 44,0.5);
+ font-family:'Dancing Script', cursive;
+ font-size:22px;
+ 
+}
+
+img{
+ height: 100px;
+ position: absolute;
+ margin-top: 20px;
+ margin-bottom: 50px;
+ margin-left: 2px;
+ object-position: left;
+}
+.imgContain{
+ display: flex;
+ height: 120px;
+ width: 20%;
+ margin-bottom: 20px;
+ object-fit: contain;
+ justify-items:start;
+ justify-self: self-start;
+ object-position: left;
+ background-color: rgb(249, 200, 44,0);
+ }
+
+
+#submit{
+ background-color: rgb(0, 194, 203);
+ border-style: none;
+ padding-left: 15px; 
+ padding-right: 15px;
+ padding-top: 40px;
+ padding-bottom: 40px;
+ margin-left: 15px;
+ font-size: 40px;
+ font-family: 'Dancing Script', cursive;
+  color:white;
+}
+img{
+ display:flex;
+ position: absolute;
+ size: 80px;
+}
+h1 {
+  font-family: 'Oswald', sans-serif;
+  background-color: rgb(248,85,90,0.8);
+  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 50px;
+  display: block;
+}
+#newTitle{
+  display: block;
+  margin-right: 80%;
+  margin-left: 1%;
+}
+.formContain{
+ margin-top: 20px;
+ padding: 10px;
+ width: 870px;
+ background-color:rgb(248,85,90,0.97) ;
+}
+
+form{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+.addForm{
+  border-style: none;
+  background-color:rgb(248,85,90,0.97);
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-items: center;
+  flex-wrap: nowrap;
+  justify-self: center;
+}
+.leftAddForm{
+  background-color:rgb(249, 200, 44,0.98);
+  height: 110px;
+  width: 100%;
+  text-align: left;
+  vertical-align: center;
+  margin-left: 8px;
+}
+#titleLabel{
+ width: 10%;
+ align-self: center;
+ background-color: rgb(249, 200, 44,0);
+ text-align: center;
+}
+#authorLabel{
+  width:10%;
+  align-self: center;
+  background-color:  rgb(249, 200, 44,0);
+  text-align: center;
+}
+#newBook{
+  width: 87%;
+  margin-bottom: 0px;
+  margin-left: 27px;
+  padding: 0px;
+  background-color: white;
+  font-size: 19px;
+  font-family: 'Roboto Mono', monospace;
+  color:black;
+  font-weight: 400;
+}
+
+#author{
+  width:87%;
+  padding: 0px;
+  margin-bottom: 0px;
+  background-color: white;
+  font-size: 19px;
+  font-family: 'Roboto Mono', monospace;
+  color:black;
+  font-weight: 400;
+}
+
+#readLabel{
+ margin-right:1px;
+ background-color:  rgb(249, 200, 44,0);
+}
+#radioButtons{
+ background-color: rgb(249, 200, 44,0);
+ text-align: center;
+ border-style: none;
+}
+.divRadio{
+ display: flex;
+ justify-content: left;
+ margin-bottom: 20px;;
+ margin-top: 8px;
+ padding: 0px;
+ align-items: center;
+}
+#read{
+ appearance: none;
+ width: 20px;
+ height: 20px;
+ padding: 0px;
+ border-style: none;
+ background-color: white;
+}
+#read:checked{
+ background-color: rgb(248,85,90, 1);
+}
+#readLast{
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-right:20% ;
+  margin-left: 1px;
+  padding: 0px;
+  background-color:white;
+}
+#readLast:checked{
+ width: 20px;
+ height: 20px;
+ background-color: rgb(248,85,90, 1);
+}
+#labelLast{
+  margin-left: 20px;
+  margin-right: 6px;
+  background-color:  rgb(249, 200, 44,0);
+}
+label{
+ margin-left:10px;
+background-color: rgb(249, 200, 44,0);
+}
+input{
+  margin:5px;
+  align-self: center;
+  background-color:rgb(249, 200, 44,0);;
+  border-style: none;
+  padding: 5px;
+  text-align: start; 
+}
+input:focus{
+ appearance: none;
+ outline-style: none;
+}
+input::placeholder{
+ font-size: 19px;
+ font-family: 'Roboto Mono', monospace;
+ color:rgb(54, 53, 53);
+ font-weight: 400;
+}
+button{
+  background-color:rgba(44, 249, 198, 0.8);
+}
+
+.contain{
+  display: flex;
+  background-color:rgb(248,85,90, 0.97) ;
+  flex-wrap:wrap; 
+  justify-items:start;
+  justify-content:space-around;
+  margin: 5px;
+  width: 870px;
+  padding: 10px;
+  display: none;
+}
+.containButtons{
+ display: flex;
+ width: 50px;
+ flex-wrap: wrap;
+ justify-self: left;
+ align-self: center;
+ text-align: center;
+}
+.buttonEdit{
+  width: 40px;
+  height: 30px;
+  align-self: center;
+  justify-self: center;
+  vertical-align: middle;
+  background-color: rgb(0, 194, 203);
+  border: none;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  color:white;
+}
+.buttonRemove{
+  width: 40px;
+  height: 30px;
+  align-self: center;
+  justify-self: center;
+  vertical-align: middle;
+  background-color: rgb(0, 194, 203);
+  border: none;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+color: white;
+}
+.card{
+ display:flex ;
+ flex-wrap: nowrap;
+ background-color:rgb(249, 200, 44, 1);
+ width:80%;
+ min-width: 800px;
+ max-width: 1000px;
+ margin:5px;
+ justify-self: center;
+ border-style:unset;
+ justify-items: center;
+ justify-content: left;
+ border-width: 1px;
+}
+
+.title{
+font-size: 18px;
+width: 100%;
+
+}
+
+.specs{
+  font-size: 18px;
+  font-family: 'Roboto Mono', monospace;
+  color:black;
+  font-weight: 400;
+  width: 150px;
+}
+
+#pop-up-form{
+ display: flex;
+ flex-wrap: nowrap;
+ background-color:white;
+ width:100%;
+ margin:5px;
+ justify-self: left;
+ 
+}
+
+#pop-up-div{
+ display: flex;
+ flex-wrap: wrap;
+ background-color:white;
+ width:80%;
+ margin:10px;
+ justify-self: left;
+ border-style: solid;
+ border-width: 1px;
+}
+
+#popLabelTitle{
+ font-size: 18px;
+}
+#popInputTitle{
+ font-size: 18px;
+ width: 90%;
+ border-style: none;
+ align-self:flex-end;
+ background-color: rgba(249, 200, 44,0.1);
+ font-family: 'Roboto Mono', monospace;
+ color:black;
+ font-weight: 400;
+}
+#inputTitle{
+ font-size: 18px;
+ width: 90%;
+ border-style: none;
+font-family: 'Roboto Mono', monospace;
+ color:black;
+ font-weight: 400;
+}
+#popLabelAuthor{
+  font-size: 15px;
+  
+}
+#popInputAuthor{
+  font-size: 18px;
+  border-style:none;
+  background-color: rgba(249, 200, 44,0.1);
+  font-family: 'Roboto Mono', monospace;
+ color:black;
+ font-weight: 400;
+}
+#inputAuthor{
+  font-size: 15px;
+  border-style: none;
+  font-family: 'Roboto Mono', monospace;
+ color:black;
+ font-weight: 400;
+}
+#popLabelYes{
+ font-size: 15px;
+
+}
+#popInputYes{
+  appearance: none;
+  margin: 0px;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  font-size: 15px;
+  background-color:white;
+  align-self: center;
+
+}
+#popInputYes:checked{
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(248,85,90, 1);
+}
+#popLabelNo{
+  font-size: 15px;
+  
+} 
+#popInputNo{
+  appearance: none;
+  margin: 0px;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  font-size: 15px;
+  background-color:white;
+  align-self: center;
+}
+#popInputNo:checked{
+  width: 20px;
+  height: 20px;
+  background-color: rgb(248,85,90, 1);
+}
+
+#popSubmit{
+width: 50px;
+height: 40px;
+align-self: center;
+justify-self: center;
+background-color:rgb(0, 194, 203);
+}
+
+#submitShelf{
+  justify-self: right;
+  font-size: 25px;
+  font-family: 'Dancing Script', cursive;
+  color:white;
+  background-color:rgb(0, 194, 203);
+  width:100px;
+  height: 80px;
+  text-align: center;
+  margin: 10px;
+}
+#leftCard{
+display: flex;
+flex-wrap: wrap;
+justify-items: center;
+width: 100px;
+align-items: center;
+
+}
