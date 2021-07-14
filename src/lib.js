@@ -177,7 +177,6 @@ function editCard(id) {
 }
 
 function deleteCard(id) {
-  console.log("deleteCard(id)");
   document.getElementById(id).remove();
   const cardWraper = document.getElementById("cardWrapper");
   Array.from(document.querySelectorAll(".bookCard")).length

@@ -50,12 +50,16 @@ function getUserName() {
 function isUserSignedIn() {
   return !!firebase.auth().currentUser;
 }
+// Return userID
+function getUserID() {
+  return firebase.auth().currentUser.uid
+}
 
 // Saves a new message to your Cloud Firestore database.
 function saveBook(title,author,read) {
   const id = title.split(' ').join('_') // Spaces for underscores
   // Add a new message entry to the database.
-  firebase.firestore().collection("books").doc(id).set({
+  firebase.firestore().collection(getUserID()).doc(id).set({
     name: getUserName(),
     id:id,
     title: title,
@@ -67,16 +71,15 @@ function saveBook(title,author,read) {
 
 // Loads books and listens for upcoming ones.
 function loadBooks() {
-  // Create the query to load the last 12 messages and listen for new ones.
+  // Create the query to load user messages.
   const query = firebase
     .firestore()
-    .collection("books")
+    .collection(getUserID())
     .orderBy("timestamp", "desc");
 
   // Start listening to the query.
   query.onSnapshot(function (snapshot) {
     snapshot.docChanges().forEach(function (change) {
-      console.log(change.type)
         if (change.type === "removed") {
           //delete from UI
           deleteCard(change.doc.data().id)
@@ -98,7 +101,6 @@ function authStateObserver(user) {
     // Get the signed-in user's profile pic and name.
     const profilePicUrl = getProfilePicUrl();
     const userName = getUserName();
-
     // Set the user's profile pic and name.
     userPicElement.style.backgroundImage =
       "url(" + addSizeToGoogleProfilePic(profilePicUrl) + ")";
@@ -111,6 +113,9 @@ function authStateObserver(user) {
     // Hide sign-in button.
     signInButtonElement.style.display = "none";
     // Hide bookshelf
+     // We load currently existing books and listen to new ones.
+    console.log(getUserID())
+    loadBooks()
     Array.from(document.querySelectorAll('.bookCard')).length ? cardWrapper.style.display='flex': cardWrapper.style.display='none';
   } else {
     // User is signed out!
@@ -120,6 +125,8 @@ function authStateObserver(user) {
     userPicElement.style.backgroundImage = "url(" + placeholderPhoto + ")";
     // Show sign-in button.
     signInButtonElement.style.display = "flex";
+    //Delete cards
+    Array.from(document.querySelectorAll(".bookCard")).map( card => card.remove())
     // Hide bookshelf
     cardWrapper.style.display = "none";
   }
@@ -130,7 +137,7 @@ function deleteBook(title) {
   const id = title.split(' ').join('_')
   const message = firebase
     .firestore()
-    .collection("books")
+    .collection(getUserID())
     .doc(id)
     .delete()
     .then(() => {
@@ -148,7 +155,7 @@ function addSizeToGoogleProfilePic(url) {
 }
 
 function updateBook (id, title, author,read) {
-  firebase.firestore().collection('books').doc(id).update({
+  firebase.firestore().collection(getUserID()).doc(id).update({
     title:title,
     author:author,
     read:read
@@ -170,9 +177,9 @@ const submitButtonElement = document.getElementById("submit");
 submitButtonElement.addEventListener("click", (e) =>
   AddBookToFirebase(e.target.form)
 );
-// We load currently existing books and listen to new ones.
-loadBooks();
 // initialize Firebase
 initFirebaseAuth();
+
+
 
 export { saveBook, updateBook, deleteBook };
