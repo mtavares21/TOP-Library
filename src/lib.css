@@ -11,27 +11,63 @@ body{
  font-size:22px;
  
 }
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 
-img{
+.header img{
  height: 100px;
- position: absolute;
  margin-top: 20px;
  margin-bottom: 50px;
- margin-left: 2px;
  object-position: left;
 }
 .imgContain{
  display: flex;
- height: 120px;
- width: 20%;
+ height: 100px;
+ width: 100px;
+ border-radius: 50%;
  margin-bottom: 20px;
- object-fit: contain;
+ object-fit: cover;
  justify-items:start;
- justify-self: self-start;
+ justify-self: flex-start;
  object-position: left;
  background-color: rgb(249, 200, 44,0);
- }
-
+}
+.login {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  width: 400px;
+}
+.login h1 {
+  display: flex;
+  color:rgb(0, 194, 203);
+  background-color: rgb(0, 0, 0,0);
+  font-family:'Dancing Script', cursive;
+  font-size: 30px;
+}
+#sign-out {
+  display:none;
+}
+#user-name {
+  text-decoration: underline;
+}
+.login img {
+  display: flex;
+  position: relative;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin:20px;
+  object-position: left;
+  background-size: contain;
+}
 
 #submit{
  background-color: rgb(0, 194, 203);
@@ -298,10 +334,10 @@ width: 100%;
  border-width: 1px;
 }
 
-#popLabelTitle{
+.popLabelTitle{
  font-size: 18px;
 }
-#popInputTitle{
+.popInputTitle{
  font-size: 18px;
  width: 90%;
  border-style: none;
@@ -319,11 +355,11 @@ font-family: 'Roboto Mono', monospace;
  color:black;
  font-weight: 400;
 }
-#popLabelAuthor{
+.popLabelAuthor{
   font-size: 15px;
   
 }
-#popInputAuthor{
+.popInputAuthor{
   font-size: 18px;
   border-style:none;
   background-color: rgba(249, 200, 44,0.1);
@@ -338,11 +374,11 @@ font-family: 'Roboto Mono', monospace;
  color:black;
  font-weight: 400;
 }
-#popLabelYes{
+.popLabelYes{
  font-size: 15px;
 
 }
-#popInputYes{
+.popInputYes{
   appearance: none;
   margin: 0px;
   margin-left: 5px;
@@ -353,17 +389,17 @@ font-family: 'Roboto Mono', monospace;
   align-self: center;
 
 }
-#popInputYes:checked{
+.popInputYes:checked{
   appearance: none;
   width: 20px;
   height: 20px;
   background-color: rgb(248,85,90, 1);
 }
-#popLabelNo{
+.popLabelNo{
   font-size: 15px;
   
 } 
-#popInputNo{
+.popInputNo{
   appearance: none;
   margin: 0px;
   margin-left: 5px;
@@ -373,7 +409,7 @@ font-family: 'Roboto Mono', monospace;
   background-color:white;
   align-self: center;
 }
-#popInputNo:checked{
+.popInputNo:checked{
   width: 20px;
   height: 20px;
   background-color: rgb(248,85,90, 1);
@@ -387,7 +423,7 @@ justify-self: center;
 background-color:rgb(0, 194, 203);
 }
 
-#submitShelf{
+.submitShelf{
   justify-self: right;
   font-size: 25px;
   font-family: 'Dancing Script', cursive;

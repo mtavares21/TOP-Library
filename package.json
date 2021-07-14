@@ -1,0 +1,30 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx webpack --watch | firebase serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtavares21/TOP-Library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtavares21/TOP-Library/issues"
+  },
+  "homepage": "https://github.com/mtavares21/TOP-Library#readme",
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "firebase": "^8.7.1"
+  }
+}
